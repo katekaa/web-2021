@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./lab_python_oop" 
+    ]
+
+}
