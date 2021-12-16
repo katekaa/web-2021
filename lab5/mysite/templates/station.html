@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block title %}Станция{% endblock %}
+
+{% block content %}
+<div class="detail">
+    {% for station in data.stations %}
+    <p>Станция {{station.name}}</p>
+    <!-- <div>
+        {% load static %}
+        {% if station.id == 0 %}
+            <img src="{% static 'admin/images/0.jpg' %}" alt="My image"/>
+        {% elif  station.id == 1 %}
+            <img src="{% static 'admin/images/1.jpg' %}" alt="My image"/>
+        {% elif  station.id == 2 %}
+            <img src="{% static 'admin/images/2.jpg' %}" alt="My image"/>
+        {% endif %}
+    </div> -->
+    <table>
+        <caption>Информация о станции<br></caption>
+        <tr>
+            <th>Год открытия</th>
+        </tr>
+        <tr><td>{{station.year}}</td></tr>
+    </table>
+    {% endfor %}
+    <p><a href="{% url 'master'%}">Назад к списку</a> </p>
+</div>
+{% endblock %}
