@@ -1,0 +1,23 @@
+<head>
+    <meta charset="utf-8">
+      <title>{% block title %}{% endblock %}</title>
+      <style>
+        table {
+         width: 400px; 
+         margin: auto; 
+        }
+        caption{
+          margin-bottom: 5px;
+        }
+        td, th {
+         border: 1px solid green; 
+         text-align: center; 
+          font-size: 16px;
+        }
+       </style>
+  </head>
+  <body>
+      <div class="title" >Московское метро</div>
+      {% block content %}{% endblock %}
+  </body>
+  </html>

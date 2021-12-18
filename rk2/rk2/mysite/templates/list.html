@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{entity}}
+{% endblock %}
+
+{% block content %}
+<h2>Сущность {{entity}}</h2>
+
+<p>Список:</p>
+<ul>
+    {% for elem in objects %}
+    <hr>
+        <li>
+            {% if entity == 'Language' %}
+            <p>{{elem.name}}  {{elem.extension}},  {{elem.ide}}</p>
+                <a href='{% url "lang_update" elem.id %}'>Изменить</a> <br>
+                <a href='{% url "lang_delete" elem.id %}'>Удалить</a>
+            {% endif %}
+
+            {% if entity == 'Library' %}
+            <p> {{elem.name}}</p><br>
+                <a href='{% url "library_update" elem.id %}'>Изменить</a> <br>
+                <a href='{% url "library_delete" elem.id %}'>Удалить</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+    <hr>
+</ul>
+
+{% if entity == 'Language' %}
+<a href='/lang/create'>Добавить запись</a>
+{% endif %}
+
+{% if entity == 'Library' %}
+<a href='/library/create'>Добавить запись</a>
+{% endif %}
+{% endblock %}

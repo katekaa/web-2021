@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}Список{% endblock %}
+
+{% block content %}
+<ul>
+    {% for line in data.lines %}
+        <li><a href="{% url 'detail' line.id%}">Линия {{ line.name }}</a> </li> 
+        <a> Всего станций {{line.total}}</a>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
