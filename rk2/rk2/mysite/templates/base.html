@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <style>
+    a, a:visited{
+     color: black
+    }
+    p {
+     font-size: 1.2rem;
+     font-family: sans-serif;
+    }
+
+    </style>
+</head>
+<body>
+<div>
+    <a style='margin: 5px;' href='/'>Главная</a>
+    <a style='margin: 5px;' href='/library'>Библиотеки</a>
+    <a style='margin: 5px;' href='/lang'>Языки</a>
+    <a style='margin: 5px;' href='/report'>Отчёт</a>
+</div>
+{% block content %} {% endblock %}
+</body>
+</html>
